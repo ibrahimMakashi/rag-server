@@ -104,7 +104,7 @@ const searchSimilarChunks = async (queryEmbedding, topK = TOP_K, filter = {}) =>
       error: err.message,
       code: err.code,
     });
-    return [];
+    throw err;
   }
 };
 
