@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Environment variables — NEVER commit real credentials
+.env
+
+# Logs
+logs/
+*.log
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+
+# Editor artefacts
+.vscode/
+.idea/
+
+# Build output (if added later)
+dist/
+build/
