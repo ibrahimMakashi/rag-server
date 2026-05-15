@@ -13,6 +13,7 @@
  */
 
 const mongoose = require("mongoose");
+const Embedding = require("../models/Embedding.model");
 const logger = require("../utils/logger.util");
 
 const VECTOR_INDEX_NAME = "vector_index";
@@ -83,11 +84,8 @@ const searchSimilarChunks = async (queryEmbedding, topK = TOP_K, filter = {}) =>
     { $limit: topK },
   ];
 
-  const db         = mongoose.connection.db;
-  const collection = db.collection("embeddings");
-
   try {
-    const results = await collection.aggregate(pipeline).toArray();
+    const results = await Embedding.aggregate(pipeline);
 
     // Log each result so relevance can be tuned if needed
     results.forEach((r) =>
