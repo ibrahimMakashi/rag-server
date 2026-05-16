@@ -22,7 +22,7 @@ connectDB()
     // ── 2. Start HTTP Server ─────────────────────────────────────────────────
     const server = http.createServer(app);
 
-    server.listen(PORT, () => {
+    server.listen(PORT,  "0.0.0.0", () => {
       logger.info(`🚀  RAG server running on port ${PORT}`);
 
       // ── 3. Start cron job for Drive sync ──────────────────────────────────
